@@ -3,12 +3,10 @@ package org.example.modelo;
 public class Autor {
     private int idAutor;
     private String nombre;
-    private int idLibro;
 
-    public Autor(int idAutor, String nombre, int idLibro) {
+    public Autor(int idAutor, String nombre) {
         this.idAutor = idAutor;
         this.nombre = nombre;
-        this.idLibro = idLibro;
     }
 
     public int getIdAutor() {
@@ -27,20 +25,11 @@ public class Autor {
         this.nombre = nombre;
     }
 
-    public int getIdLibro() {
-        return idLibro;
-    }
-
-    public void setIdLibro(int idLibro) {
-        this.idLibro = idLibro;
-    }
-
     @Override
     public String toString() {
         return "Autor{" +
                 "idAutor=" + idAutor +
                 ", nombre='" + nombre + '\'' +
-                ", idLibro=" + idLibro +
                 '}';
     }
 }
