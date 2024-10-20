@@ -4,26 +4,26 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class Prestamo {
-    private int idPresatamo;
+    private int idPrestamo;
     private LocalDate fechaInicio;
-    private Date fechaFinal;
+    private LocalDate fechaFinal;
     private int idUsuario;
     private int idLibro;
 
-    public Prestamo(int idPresatamo, LocalDate fechaInicio, Date fechaFinal, int idUsuario, int idLibro) {
-        this.idPresatamo = idPresatamo;
+    public Prestamo(int idPresatamo, LocalDate fechaInicio, LocalDate fechaFinal, int idUsuario, int idLibro) {
+        this.idPrestamo = idPresatamo;
         this.fechaInicio = fechaInicio;
         this.fechaFinal = fechaFinal;
         this.idUsuario = idUsuario;
         this.idLibro = idLibro;
     }
 
-    public int getIdPresatamo() {
-        return idPresatamo;
+    public int getIdPrestamo() {
+        return idPrestamo;
     }
 
-    public void setIdPresatamo(int idPresatamo) {
-        this.idPresatamo = idPresatamo;
+    public void setIdPrestamo(int idPresatamo) {
+        this.idPrestamo = idPresatamo;
     }
 
     public LocalDate getFechaInicio() {
@@ -34,11 +34,11 @@ public class Prestamo {
         this.fechaInicio = fechaInicio;
     }
 
-    public Date getFechaFinal() {
+    public LocalDate getFechaFinal() {
         return fechaFinal;
     }
 
-    public void setFechaFinal(Date fechaFinal) {
+    public void setFechaFinal(LocalDate fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
 
@@ -61,7 +61,7 @@ public class Prestamo {
     @Override
     public String toString() {
         return "Prestamo{" +
-                "idPresatamo=" + idPresatamo +
+                "idPresatamo=" + idPrestamo +
                 ", fechaInicio=" + fechaInicio +
                 ", fechaFinal=" + fechaFinal +
                 ", idUsuario=" + idUsuario +

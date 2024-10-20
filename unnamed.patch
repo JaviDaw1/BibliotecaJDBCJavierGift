@@ -1,0 +1,17 @@
+Index: src/main/java/org/example/daos/AutorDAO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/daos/AutorDAO.java b/src/main/java/org/example/daos/AutorDAO.java
+--- a/src/main/java/org/example/daos/AutorDAO.java	
++++ b/src/main/java/org/example/daos/AutorDAO.java	(date 1729430859909)
+@@ -21,7 +21,7 @@
+         }
+     }
+ 
+-    // Método para listar todos los autores
++    // Método para mostrar todos los autores
+     public List<Autor> listaAutores() throws SQLException {
+         List<Autor> autores = new ArrayList<>();
+         String sql = "SELECT * FROM Autor";
