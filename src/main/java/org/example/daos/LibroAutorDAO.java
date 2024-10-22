@@ -17,8 +17,6 @@ public class LibroAutorDAO {
                 ps.setInt(1, idLibro);
                 ps.setInt(2, idAutor);
                 ps.executeUpdate();
-
         }
     }
-
 }
