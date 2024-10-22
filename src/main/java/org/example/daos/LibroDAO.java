@@ -28,7 +28,7 @@ public class LibroDAO {
              Statement st = conexion.createStatement();
              ResultSet rs = st.executeQuery(sql); {
             while (rs.next()) {
-               Libro libro = new Libro(rs.getInt("id"), rs.getString("titulo"), rs.getString("isbn"), rs.getInt("idAutor"));
+               Libro libro = new Libro(rs.getInt("id"), rs.getString("titulo"), rs.getString("isbn"));
                 libros.add(libro);
             }
         }

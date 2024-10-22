@@ -5,7 +5,7 @@ public class Libro {
     private String titulo;
     private String isbn;
 
-    public Libro(int idLibro, String titulo, String isbn, int idAutor) {
+    public Libro(int idLibro, String titulo, String isbn) {
         this.idLibro = idLibro;
         this.titulo = titulo;
         this.isbn = isbn;
