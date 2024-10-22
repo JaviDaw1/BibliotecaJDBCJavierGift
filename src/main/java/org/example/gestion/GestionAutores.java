@@ -37,7 +37,7 @@ public class GestionAutores {
         return autores.stream().anyMatch(autor -> autor.getIdAutor() == idAutor);
     }
 
-    public void mostrarAutors() {
+    public void mostrarAutores() {
         if (autores.isEmpty()) {
             System.out.println("No hay autores en la lista.");
         } else {
@@ -47,11 +47,11 @@ public class GestionAutores {
         }
     }
 
-    public List<Autor> getAutors() {
+    public List<Autor> getAutores() {
         return autores;
     }
 
-    public void setAutors(List<Autor> autores) {
+    public void setAutores(List<Autor> autores) {
         this.autores = autores;
     }
 }
