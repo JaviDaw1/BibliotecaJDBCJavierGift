@@ -11,6 +11,7 @@ public class Libro {
         this.isbn = isbn;
     }
 
+    // Getters y setters
     public int getIdLibro() {
         return idLibro;
     }

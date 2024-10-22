@@ -7,6 +7,7 @@ import java.util.List;
 
 public class GestionAutores {
 
+    // Lista que almacena los autores en memoria
     private List<Autor> autores;
 
     public GestionAutores() {

@@ -9,11 +9,14 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Menu {
+    // Instancias de las clases de gestión en memoria
     private GestionAutores gestionAutores = new GestionAutores();
     private GestionLibros gestionLibros = new GestionLibros();
     private GestionUsuarios gestionUsuarios = new GestionUsuarios();
     private GestionPrestamos gestionPrestamos = new GestionPrestamos();
     private GestionLibroAutor gestionLibroAutor = new GestionLibroAutor();
+
+    // Instancias de las clases de dao
     private AutorDAO autorDAO = new AutorDAO(gestionAutores);
     private LibroAutorDAO libroAutorDAO = new LibroAutorDAO(gestionLibroAutor);
     private LibroDAO libroDAO = new LibroDAO(gestionLibros);
@@ -21,6 +24,7 @@ public class Menu {
     private UsuarioDAO usuarioDAO = new UsuarioDAO(gestionUsuarios);
     private Scanner scanner = new Scanner(System.in);
 
+    // Método que inicia el programa y carga los datos iniciales desde la base de datos
     public void iniciar() throws SQLException {
         gestionAutores.setAutores(autorDAO.listaAutores());
         gestionLibros.setLibros(libroDAO.listaLibros());
@@ -31,6 +35,7 @@ public class Menu {
 
         int opcion;
         do {
+            // Menú principal de la aplicación
             System.out.println("\nMENU DE GESTION DE BIBLIOTECA");
             System.out.println("1. Gestionar Autores");
             System.out.println("2. Gestionar Libros");

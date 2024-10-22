@@ -9,6 +9,7 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+    // Getters y setters
     public int getIdUsuario() {
         return idUsuario;
     }

@@ -17,6 +17,7 @@ public class LibroDAO {
         this.gestionLibros = gestionLibros;
     }
 
+    // Método para crear un nuevo libro
     public void createLibro(Libro libro) throws SQLException {
         String query = "INSERT INTO Libro (titulo, isbn) VALUES (?, ?)";
         PreparedStatement ps = conexion.prepareStatement(query);
@@ -28,6 +29,7 @@ public class LibroDAO {
         }
     }
 
+    // Método para listar los  libros
     public List<Libro> listaLibros() throws SQLException {
         String sql = "SELECT * FROM Libro";
         Statement st = conexion.createStatement();
@@ -45,6 +47,7 @@ public class LibroDAO {
         return gestionLibros.getLibros();
     }
 
+    // Método para actualizar un nuevo libro
     public void updateLibro(Libro libro) throws SQLException {
         String query = "UPDATE Libro SET titulo = ?, isbn = ? WHERE id = ?";
         PreparedStatement ps = conexion.prepareStatement(query);
@@ -57,6 +60,7 @@ public class LibroDAO {
         }
     }
 
+    // Método para borrar un nuevo libro
     public void deleteLibro(int id) throws SQLException {
         String query = "DELETE FROM Libro WHERE id = ?";
         PreparedStatement ps = conexion.prepareStatement(query);

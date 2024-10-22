@@ -12,6 +12,7 @@ public class AutorDAO {
     private Connection conexion;
     private GestionAutores gestionAutores;
 
+    // Constructor que inicializa la conexión y la gestión de autores
     public AutorDAO(GestionAutores gestionAutores) {
         this.conexion = ConexionBD.getConexion();
         this.gestionAutores = gestionAutores;
@@ -24,6 +25,7 @@ public class AutorDAO {
         {
             ps.setString(1, autor.getNombre());
             ps.executeUpdate();
+            // Se añade el autor a la lista en memoria
             gestionAutores.añadirAutor(autor);
         }
     }
@@ -39,6 +41,7 @@ public class AutorDAO {
                         rs.getInt("id"),
                         rs.getString("nombre")
                 );
+                // Se añade el autor a la lista en memoria
                 gestionAutores.añadirAutor(autor);
             }
         }
@@ -53,6 +56,7 @@ public class AutorDAO {
             ps.setString(1, autor.getNombre());
             ps.setInt(2, autor.getIdAutor());
             ps.executeUpdate();
+            // Se añade el autor a la lista en memoria
             gestionAutores.actualizarAutor(autor);
         }
     }
@@ -64,6 +68,7 @@ public class AutorDAO {
         {
             ps.setInt(1, id);
             ps.executeUpdate();
+            // Se añade el autor a la lista en memoria
             gestionAutores.eliminarAutor(id);
         }
     }

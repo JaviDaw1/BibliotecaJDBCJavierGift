@@ -13,11 +13,13 @@ public class LibroAutorDAO {
     private Connection conexion;
     private GestionLibroAutor gestionLibroAutor;
 
+    // Constructor que inicializa la conexión y la gestión de la relación Libro-Autor
     public LibroAutorDAO(GestionLibroAutor gestionLibroAutor) {
         this.conexion = ConexionBD.getConexion();
         this.gestionLibroAutor = gestionLibroAutor;
     }
 
+    // Método para añadir una relación entre un libro y un autor de la base de datos y de la lista en memoria
     public void anadirAutorALibro(LibroAutor libroAutor) throws SQLException {
         String query = "INSERT INTO Libro_Autor (idLibro, idAutor) VALUES (?, ?)";
 
@@ -30,6 +32,7 @@ public class LibroAutorDAO {
         }
     }
 
+    // Método para listar la relación entre un libro y un autor de la base de datos y de la lista en memoria
     public List<LibroAutor> listaLibroAutor() throws SQLException {
         String sql = "SELECT * FROM Libro_Autor";
         Statement st = conexion.createStatement();
@@ -45,6 +48,7 @@ public class LibroAutorDAO {
         }
         return gestionLibroAutor.getLibroAutores();
     }
+    // Método para eliminar una relación entre un libro y un autor de la base de datos y de la lista en memoria
     public void delete(int idLibro, int idUsuario) throws SQLException {
         String elimina = "DELETE FROM Libro_Autor WHERE idLibro=?, idUsuario= ?";
         try (PreparedStatement ps = conexion.prepareStatement(elimina)) {

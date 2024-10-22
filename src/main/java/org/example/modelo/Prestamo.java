@@ -18,6 +18,7 @@ public class Prestamo {
         this.idLibro = idLibro;
     }
 
+    // Getters y setters
     public int getIdPrestamo() {
         return idPrestamo;
     }

@@ -9,6 +9,7 @@ public class LibroAutor {
         this.idAutor = idAutor;
     }
 
+    // Getters y setters
     public int getIdLibro() {
         return idLibro;
     }
