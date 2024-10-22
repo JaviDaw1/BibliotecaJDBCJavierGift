@@ -18,7 +18,7 @@ public class PrestamoDAO {
         String query = "INSERT INTO Prestamo (fechaInicio, fechaFin, idUsuario, idLibro) VALUES (?, ?, ?, ?)";
         PreparedStatement ps = conexion.prepareStatement(query); {
             ps.setDate(1, Date.valueOf(prestamo.getFechaInicio()));
-            ps.setDate(2, Date.valueOf(prestamo.getFechaFinal()));
+            ps.setDate(2, prestamo.getFechaFinal());
             ps.setInt(3, prestamo.getIdUsuario());
             ps.setInt(4, prestamo.getIdLibro());
             ps.executeUpdate();
@@ -35,7 +35,7 @@ public class PrestamoDAO {
                 Prestamo prestamo = new Prestamo(
                         rs.getInt("id"),
                         rs.getDate("fechaInicio").toLocalDate(),
-                        rs.getDate("fechaFin").toLocalDate(),
+                        rs.getDate("fechaFin"),
                         rs.getInt("idUsuario"),
                         rs.getInt("idLibro")
                 );
@@ -50,7 +50,7 @@ public class PrestamoDAO {
         String query = "UPDATE Prestamo SET fechaInicio = ?, fechaFin = ?, idUsuario = ?, idLibro = ? WHERE id = ?";
         PreparedStatement ps = conexion.prepareStatement(query); {
             ps.setDate(1, Date.valueOf(prestamo.getFechaInicio()));
-            ps.setDate(2, Date.valueOf(prestamo.getFechaFinal()));
+            ps.setDate(2, prestamo.getFechaFinal());
             ps.setInt(3, prestamo.getIdUsuario());
             ps.setInt(4, prestamo.getIdLibro());
             ps.setInt(5, prestamo.getIdPrestamo());
